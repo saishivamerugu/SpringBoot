@@ -8,6 +8,7 @@ public class Example {
 
     @GetMapping("/hello")
     public String sayHello() {
-        return "This is the Spring Boot";
+        return "This is the Spring Boot first project";
     }
 }
+
