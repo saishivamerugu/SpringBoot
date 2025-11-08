@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spring Boot App</title>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the page <span th:text="${name}">User</span></h1>
+</header>
+
+<h1 th:text="${name}">User</h1>
+
+<form th:action="@{/submit}" method="post">
+    Name: <input type="text" name="name" />
+    <br><br>
+    Password: <input type="password" name="password" />
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
