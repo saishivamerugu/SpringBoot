@@ -10,10 +10,11 @@ import com.project.model.Props;
 public class TestContoller {
 	
 	@Autowired
-	Props props;
+	Props props; 
 
 	@GetMapping("/props")
 	public Props getProps() {
 		return props;
 	}
 }
+
