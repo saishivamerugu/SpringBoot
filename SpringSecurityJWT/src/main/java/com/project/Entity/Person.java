@@ -43,7 +43,6 @@ public class Person {
 	}
 
 	public Person(long userId, String email, String password, List<Authority> authorities) {
-		super();
 		this.userId = userId;
 		this.email = email;
 		this.password = password;
@@ -51,7 +50,6 @@ public class Person {
 	}
 
 	public Person() {
-		super();
 	}
 
 	public long getUserId() {
