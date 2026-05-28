@@ -10,11 +10,13 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.project.Entity.Authority;
 import com.project.Entity.Person;
 import com.project.dao.PersonRepository;
 
+@Service
 public class SecurityUserDetailsService implements UserDetailsService{
 
 	@Autowired
@@ -44,3 +46,33 @@ public class SecurityUserDetailsService implements UserDetailsService{
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Login -> autenticate - email pass -> Spring secuirty -> authentication manager 
+ * 
+ * if authentication successfully -> security context -> in this we store all the data of the user whether he was authenticated 
+ * next after auth. we generate a JWT and send the jwt to the frontend 
+ * frontend will store the jwt and for every api i call -> /order , /buy / cancel
+ * 
+ * for every api we will send the same api the same JWT
+ * every time there will be an api call 
+ * we send back the JWT in the headers and validate the  user at the server
+ * 
+ * JWT auth should be at the Filter .. we create a custom filter and import the filter manually 
+ */
