@@ -18,11 +18,13 @@ public class Authority {
 	private String role;
 
 	public Authority(long authorityId, String role) {
+		super();
 		this.authorityId = authorityId;
 		this.role = role;
 	}
 
 	public Authority() {
+		super();
 	}
 
 	public long getAuthorityId() {
