@@ -21,7 +21,7 @@ public class Person {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long userId;
+	private Long userId;
 	
 	@Column(unique = true)
 	private String email;
@@ -37,12 +37,15 @@ public class Person {
 	public List<Authority> getAuthorities() {
 		return authorities;
 	}
-
+ 
 	public void setAuthorities(List<Authority> authorities) {
 		this.authorities = authorities;
 	}
 
-	public Person(long userId, String email, String password, List<Authority> authorities) {
+	public Person(Long userId, String email,
+			String password,
+			List<Authority> authorities){
+		super();
 		this.userId = userId;
 		this.email = email;
 		this.password = password;
@@ -50,13 +53,14 @@ public class Person {
 	}
 
 	public Person() {
+		super();
 	}
 
-	public long getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
