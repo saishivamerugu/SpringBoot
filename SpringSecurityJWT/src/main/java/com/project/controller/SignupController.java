@@ -44,18 +44,11 @@ public class SignupController {
 	
 	@PostMapping("/signup")
 	public Person signup(@RequestBody Person person) {
-
-		String pass =
-				passwordEncoder.encode(person.getPassword());
-
-		person.setPassword(pass);
-
+		String pass = passwordEncoder.encode(person.getPassword());
+		person.setPassword(pass
 		Authority authority = new Authority();
-
 		authority.setRole("ROLE_USER");
-
 		person.setAuthorities(List.of(authority));
-
 		return personRepository.save(person);
 	}
 	
@@ -65,21 +58,15 @@ public class SignupController {
 
 		try {
 
-			authenticationManager.authenticate(
-					new UsernamePasswordAuthenticationToken(
-							person.getEmail(),
-							person.getPassword()));
+			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(person.getEmail(), person.getPassword()));
 
 		} catch (Exception e) {
-
 			return ResponseEntity
 					.status(HttpStatus.UNAUTHORIZED)
 					.body("Invalid Credentials");
 		}
 
-		String jwtToken =
-				jwtService.generateToken(
-						person.getEmail());
+		String jwtToken =jwtService.generateToken(person.getEmail());
 
 		return ResponseEntity.ok(jwtToken);
 	}
