@@ -42,9 +42,7 @@ public class Person {
 		this.authorities = authorities;
 	}
 
-	public Person(Long userId, String email,
-			String password,
-			List<Authority> authorities){
+	public Person(Long userId, String email, String password, List<Authority> authorities){
 		super();
 		this.userId = userId;
 		this.email = email;
