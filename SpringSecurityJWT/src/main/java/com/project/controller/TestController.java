@@ -8,7 +8,7 @@ public class TestController {
 
 	@GetMapping("/hi")
 	public String hi() {
-		return "hi how are you ";
+		return "hi how are you..";
 	}
 	
 	@GetMapping("/open")
