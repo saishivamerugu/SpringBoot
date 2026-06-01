@@ -10,7 +10,7 @@ import com.project.service.MailService;
 @RestController
 public class MailController {
 
-	@Autowired
+	@Autowired 
 	MailService mailService;
 	
 	@GetMapping("/send")
