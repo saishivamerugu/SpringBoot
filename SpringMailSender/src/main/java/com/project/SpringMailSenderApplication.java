@@ -10,4 +10,4 @@ public class SpringMailSenderApplication {
 		SpringApplication.run(SpringMailSenderApplication.class, args);
 	}
 }
- 
+  
