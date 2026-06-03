@@ -23,9 +23,7 @@ public class AIController {
     }
 
     @PostMapping("/chat")
-    public String chat(
-            @RequestParam String prompt,
-            Model model) {
+    public String chat(@RequestParam String prompt, Model model) {
 
         try {
 
