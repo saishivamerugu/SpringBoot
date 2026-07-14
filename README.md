@@ -8,7 +8,7 @@ This repository contains multiple Spring Boot and Java-based projects demonstrat
 - Spring MVC
 - Spring Data JPA
 - Spring REST APIs
-- Spring Security
+- Spring Security  
 - JDBC Integration
 - Lombok
 - Thymeleaf
