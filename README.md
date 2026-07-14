@@ -231,7 +231,7 @@ application.properties
 ```bash
 Spring Boot App
 ```
-
+ 
 ---
 
 # 📘 Learning Objectives
@@ -261,7 +261,7 @@ Feel free to fork the repository and submit pull requests.
 ## Saishivamerugu
 
 GitHub:
-[https://github.com/saishivamerugu](https://github.com/saishivamerugu)
+[https://github.com/saishivamerugu](https://github.com/saishivamerugu) 
 
 ---
 
