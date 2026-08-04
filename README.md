@@ -27,7 +27,7 @@ A beginner-friendly Spring Boot project demonstrating:
 - Basic Spring Boot setup
 
 ### Tech Used
-- Java
+- Java 
 - Spring Boot
  
 ---
