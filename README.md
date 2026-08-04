@@ -71,7 +71,7 @@ Demonstrates the use of Lombok annotations to reduce boilerplate code.
 - `@AllArgsConstructor`
 
 ### Benefits
-- Cleaner code
+- Cleaner code  
 - Reduced boilerplate
 
 ---
