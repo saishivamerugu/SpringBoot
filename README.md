@@ -9,7 +9,7 @@ This repository contains multiple Spring Boot and Java-based projects demonstrat
 - Spring Data JPA
 - Spring REST APIs
 - Spring Security  
-- JDBC Integration
+- JDBC Integration 
 - Lombok
 - Thymeleaf
 - Mail Sender
