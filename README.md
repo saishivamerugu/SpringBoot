@@ -65,7 +65,7 @@ Demonstrates the use of Lombok annotations to reduce boilerplate code.
 
 ### Features
 - `@Getter`
-- `@Setter`
+- `@Setter`  
 - `@Data`
 - `@NoArgsConstructor`
 - `@AllArgsConstructor`
