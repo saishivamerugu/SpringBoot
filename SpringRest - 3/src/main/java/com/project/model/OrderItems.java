@@ -39,7 +39,6 @@ public class OrderItems {
     @JoinColumn(name = "product_id")
     private Product product;
 
-    // ---------- Constructors ----------
     public OrderItems() {}
 
     public OrderItems(long quantity, Order order, Product product) {
