@@ -53,12 +53,8 @@ public class OrderServiceImpl implements OrderService {
             orderItem.setProduct(product);
             orderItem.setOrder(order);
             orderItems.add(orderItem);
-            productRepository.updateStock(
-                    product.getProductId(),
-                    product.getStock() - orderRequestDTO.getQuantity()
-            );
+            productRepository.updateStock(product.getProductId(), product.getStock() - orderRequestDTO.getQuantity());
         }
-
         order.setOrderItems(orderItems);
         Order savedOrder = orderRepository.save(order);
         return buildOrderResponseDtoFromOrder(savedOrder);
