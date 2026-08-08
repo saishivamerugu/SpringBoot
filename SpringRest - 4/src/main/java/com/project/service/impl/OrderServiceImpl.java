@@ -38,30 +38,21 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public OrderResponseDto placeOrder(List<OrderRequestDTO> orderRequestDTOList) {
-
         Order order = new Order();
         order.setStatus("Ordered");
         List<OrderItems> orderItems = new ArrayList<>();
-
         for (OrderRequestDTO orderRequestDTO : orderRequestDTOList) {
-
             Product product = productRepository.findById(orderRequestDTO.getProductId())
-                    .orElseThrow(() ->
-                            new IllegalArgumentException("Product not found with id: "
-                                    + orderRequestDTO.getProductId()));
-
+                    .orElseThrow(() -> new IllegalArgumentException("Product not found with id: " + orderRequestDTO.getProductId()));
             if (product.getStock() < orderRequestDTO.getQuantity()) {
                 throw new IllegalStateException(
                         "Insufficient stock for product id: " + product.getProductId());
             }
-
             OrderItems orderItem = new OrderItems();
             orderItem.setQuantity(orderRequestDTO.getQuantity());
             orderItem.setProduct(product);
             orderItem.setOrder(order);
-
             orderItems.add(orderItem);
-
             productRepository.updateStock(
                     product.getProductId(),
                     product.getStock() - orderRequestDTO.getQuantity()
@@ -75,44 +66,33 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public ResponseEntity<OrderResponseDto> getOrderInfo(long orderId) {
-
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new OrderNotFoundException("No Order Found!..."));
         OrderResponseDto response = buildOrderResponseDtoFromOrder(order);
-
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
+    @Override
     private OrderResponseDto buildOrderResponseDtoFromOrder(Order order) {
-
         OrderResponseDto response = new OrderResponseDto();
         response.setOrderId(order.getOrderId());
         response.setStatus(order.getStatus());
-
         List<OrderItemResponseDto> items = new ArrayList<>();
         double totalAmount = 0;
-
         for (OrderItems orderItem : order.getOrderItems()) {
-
             OrderItemResponseDto dto = new OrderItemResponseDto();
             dto.setProductId(orderItem.getProduct().getProductId());
             dto.setProductName(orderItem.getProduct().getProductName());
             dto.setEachProductPrice(orderItem.getProduct().getPrice());
             dto.setQuantity(orderItem.getQuantity());
-
-            double totalProductPrice =
-                    orderItem.getProduct().getPrice() * orderItem.getQuantity();
-
+            double totalProductPrice = orderItem.getProduct().getPrice() * orderItem.getQuantity();
             dto.setTotalProductPrice(totalProductPrice);
             totalAmount += totalProductPrice;
-
             items.add(dto);
         }
-
         response.setOrderItems(items);
         response.setOrderPrice(totalAmount);
         response.setTotalAmount(totalAmount);
-
         return response;
     }
 
