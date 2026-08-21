@@ -15,7 +15,7 @@ public class AIController {
 
     public AIController(ChatModel chatModel) {
         this.chatModel = chatModel;
-    }
+    } 
 
     @GetMapping("/")
     public String home() {
