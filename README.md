@@ -11,7 +11,7 @@ This repository contains multiple Spring Boot and Java-based projects demonstrat
 - Spring Security  
 - JDBC Integration 
 - Lombok
-- Thymeleaf
+- Thymeleaf 
 - Mail Sender
 - CRUD Operations
 - RESTful Web Services
